@@ -1,4 +1,5 @@
 import requests  # The module for handling HTTP requests for an API
+import os
 
 # The API Endpoint for the Weather Forecast Data
 WEATHER_API_ENDPOINT = "https://api.openweathermap.org/data/2.5/forecast"
@@ -10,7 +11,7 @@ CITY_CODE_SEARCH_ENDPOINT = "http://api.openweathermap.org/geo/1.0/direct"
 CURRENT_WEATHER_API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather"
 
 # API Key for the openweathermap.org API
-API_KEY = '455a6fc0215111908e30a79040e22dcf'
+API_KEY = os.environ.get("API_KEY")
 
 # A Session object for request pooling, helps in performance and prevents frequent request cancelling by the API host
 session = requests.Session()
